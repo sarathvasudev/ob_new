@@ -1,0 +1,108 @@
+<div class="container">
+  <!-- Left tab -->
+  <div class="left box">
+    <!-- Instrumentation -->
+    <div class="instrumentation">
+      <obc-instrument-field [value]="compassInfo?.heading ?? 0" tag="HDG" degree="true"></obc-instrument-field>
+      <obc-instrument-field [value]="compassInfo?.courseOverGround ?? 0" tag="COG" degree="true"></obc-instrument-field>
+    </div>
+
+    <!-- Compass -->
+    <div class="centered">
+      <div class="wrapper compass">
+        <obc-compass
+        [heading]="compassInfo?.heading ?? 0"
+        [courseOverGround]="compassInfo?.courseOverGround ?? 0"
+        [headingAdvices]="compassInfo?.headingAdvices ?? []">
+        ></obc-compass>
+      </div>
+    </div>
+
+    <!-- Thruster -->
+    <div class="centered">
+      <div class="wrapper thruster">
+        <obc-azimuth-thruster-labeled
+          [angle]="thrusterInfo?.angle ?? 0"
+          [angleSetpoint]="thrusterInfo?.angleSetpoint ?? 0"
+          [thrust]="thrusterInfo?.thrust ?? 0"
+          [thrustSetpoint]="thrusterInfo?.thrustSetpoint ?? 0"
+          [atAngleSetpoint]="thrusterInfo?.atAngleSetpoint ?? false"
+          [disableAutoAtAngleSetpoint]="thrusterInfo?.disableAutoAtAngleSetpoint ?? false"
+          [autoAtAngleSetpointDeadband]="thrusterInfo?.autoAtAngleSetpointDeadband ?? 0"
+          [touching]="thrusterInfo?.touching ?? false"
+          [atThrustSetpoint]="thrusterInfo?.atThrustSetpoint ?? false"
+          [thrustSetpointAtZero] ="thrusterInfo?.thrustSetpointAtZero ?? false"
+          [disableAutoAtThrustSetpoint]="thrusterInfo?.disableAutoAtThrustSetpoint ?? false"
+          [autoAtThrustSetpointDeadband]="thrusterInfo?.autoAtThrustSetpointDeadband ?? 0"
+          [thrustSetpointAtZeroDeadband]="thrusterInfo?.thrustSetpointAtZeroDeadband ?? 0"
+          [singleDirection]="thrusterInfo?.singleDirection ?? false"
+          [topPropeller]="thrusterInfo?.topPropeller"
+          [bottomPropeller]="thrusterInfo?.bottomPropeller"
+          [angleAdvices]="thrusterInfo?.angleAdvices ?? []"
+          [thrustAdvices]="thrusterInfo?.thrustAdvices ?? []">
+        </obc-azimuth-thruster-labeled>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right tab -->
+  <div class="right box">
+    <!-- Speed -->
+    <div class="speed-card">
+      <div class="title">Speed</div>
+      <div class="speed-content">
+        <obi-speed class="speed-icon"></obi-speed>
+        <obc-instrument-field
+          [value]="information?.shipSpeed ?? 0"
+          fractionDigits="1"
+          tag="STW"
+          unit="KN">
+        </obc-instrument-field>
+      </div>
+    </div>
+
+
+    <!-- Weather -->
+    <div class="weather-card">
+      <div class="title">Weather</div>
+      <div class="weather-content">
+        <div class="weather-icon">
+          <obi-weather></obi-weather>
+        </div>
+        <div class="weather-data">
+          <div class="data-row">
+            <obi-temperature class="icon"></obi-temperature>
+            <span class="value">{{weatherInfo?.temperature ?? 0}} °C</span>
+          </div>
+          <div class="data-row">
+            <obi-current class="icon"></obi-current>
+            <span class="value">{{weatherInfo?.airPressure ?? 0}} hPa</span>
+          </div>
+          <div class="data-row">
+            <obi-light-rain class="icon"></obi-light-rain>
+            <span class="value">{{weatherInfo?.humidity ?? 0}} %</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Own Ship Data -->
+    <div class="ownship-card">
+      <div class="title">
+        Own Ship Data <obi-ship class="ship-icon"></obi-ship>
+      </div>
+      <div class="ownship-content">
+        <div class="data-row">
+          <span class="label">Name:</span>
+          <span class="value"> {{information?.name}}</span>
+      </div>
+      <div class="data-row">
+        <span class="label">Weight:</span>
+        <span class="value">{{information?.weight ?? 0}} Tons</span>
+      </div>
+      <div class="data-row">
+        <span class="label">Coordinates:</span>
+        <span class="value">X: 35454, Y: 67545</span>
+      </div>
+    </div>
+  </div>
+</div>
