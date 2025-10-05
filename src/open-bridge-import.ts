@@ -4,6 +4,12 @@ import "@oicl/openbridge-webcomponents/src/palettes/variables.css";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-display-brilliance-proposal.js";
 import "@oicl/openbridge-webcomponents/dist/components/top-bar/top-bar.js";
 import "@oicl/openbridge-webcomponents/dist/components/brilliance-menu/brilliance-menu.js";
+import "@oicl/openbridge-webcomponents/dist/components/select/select.js";
+import "@oicl/openbridge-webcomponents/dist/components/button/button.js";
+import "@oicl/openbridge-webcomponents/dist/components/notification-message/notification-message.js";
+import "@oicl/openbridge-webcomponents/dist/components/alert-icon/alert-icon.js";
+
+
 import "@oicl/openbridge-webcomponents/dist/navigation-instruments/compass/compass.js";
 import "@oicl/openbridge-webcomponents/dist/navigation-instruments/instrument-field/instrument-field.js";
 
@@ -15,4 +21,5 @@ import "@oicl/openbridge-webcomponents/dist/icons/icon-current.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-light-rain.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-speed.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-ship.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-caution-color-iec.js";
 

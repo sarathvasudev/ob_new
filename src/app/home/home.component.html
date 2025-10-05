@@ -21,7 +21,38 @@
       (palette-changed)="onPaletteChange($event)">
       </obc-brilliance-menu>
     }
-    <app-demo [information]="information"></app-demo>
+    
+    @if (!showAppDemo){
+      <div class="dropdown-row">
+        <select>
+          <option value = "" disabled selected>Select Country</option>
+          @for (country of countries; track country) {
+            <option [value]="country.value">{{ country.label }}</option>
+          }
+        </select>
+        <select>
+          <option value = "" disabled selected>Select Location</option>
+            @for (location of locations; track location) {
+              <option [value]="location.value">{{ location.label }}</option>
+           }
+        </select>
+        <select>
+          <option value = "" disabled selected>Select Weather</option>
+          @for (weather of weathers; track weather) {
+            <option [value]="weather.value">{{ weather.label }}</option>
+          }
+        </select>
+        <obc-button class="regular"
+          variant="raised"
+          (click)="onStart()">
+          Start
+        </obc-button>
+      </div>
+    }
+    @else{
+      <app-demo (backClicked)="onBack()"
+      [information]="information"></app-demo>
+    }
   </div>
 </main>
 </div>
