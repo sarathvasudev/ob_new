@@ -3,13 +3,13 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CompassDataModel, InformationModel, ThrusterDataModel, WeatherDataModel } from '../openbridge-home/models/models';
 
 @Component({
-  selector: 'app-demo',
-  templateUrl: './demo.component.html',
-  styleUrls: ['./demo.component.css'],
+  selector: 'app-openbridge-demo',
+  templateUrl: './openbridge-demo.component.html',
+  styleUrls: ['./openbridge-demo.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA] 
 })
-export class DemoComponent implements OnInit{
+export class OpenBridgeDemoComponent implements OnInit{
   @Input() information:InformationModel | undefined;
   ngOnInit(): void {
   }

@@ -3,7 +3,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { InformationModel, ThrusterDataModel } from './models/models';
 import { WindowHandlingService } from './services/window-handling-service';
 import { BridgeStoreService } from './services/bridge-store.service';
-import { DemoComponent } from "../demo/demo.component";
+import { OpenBridgeDemoComponent } from "../openbridge-demo/openbridge-demo.component";
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,8 @@ import { DemoComponent } from "../demo/demo.component";
   styleUrls: ['./openbridge-home.component.css'],
   standalone: true,
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  imports: [DemoComponent] 
+  imports: [OpenBridgeDemoComponent],
+  providers:[BridgeStoreService,WindowHandlingService]
 })
 export class OpenBridgeHomeComponent implements OnInit, OnDestroy {
   private ws!: WebSocket;

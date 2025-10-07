@@ -92,3 +92,8 @@ mat-sidenav {
 mat-card {
   background-color: #ffffff;
 }
+
+.my-custom-btn {
+  background-color: #977aac !important;
+  color: #fff !important;
+}

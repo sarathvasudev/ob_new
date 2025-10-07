@@ -34,7 +34,9 @@
             <mat-form-field appearance="outline" class="form-field">
               <mat-label>Port</mat-label>
               <mat-select formControlName="port">
-                <mat-option *ngFor="let p of ports" [value]="p">{{ p }}</mat-option>
+                @for(port of ports;track port){
+                  <mat-option [value]="port">{{ port }}</mat-option>
+                }
               </mat-select>
             </mat-form-field>
           </div>
@@ -49,7 +51,7 @@
           </div>
 
           <div class="button-row">
-            <button mat-raised-button color="primary" type="submit">
+            <button mat-raised-button class="my-custom-btn" type="submit">
               Start Simulation
             </button>
           </div>
@@ -62,6 +64,9 @@
 }
 @else {
     <app-dashboard
+    [country]="form.value.country"
+    [port]="form.value.port"
+    [weather]="form.value.weather"
     (backClicked)="backClickedEventHandler()"
     ></app-dashboard>
 }

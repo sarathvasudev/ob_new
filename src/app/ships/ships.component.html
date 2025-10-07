@@ -10,7 +10,15 @@
   </div>
 </mat-toolbar>
 <div class="content">
-	
+	<mat-sidenav-container class="sidenav-container">
+	<mat-sidenav mode="side" opened class="left-sidenav">
+      <mat-nav-list>
+        <mat-list-item>Dashboard</mat-list-item>
+        <mat-list-item>Ships</mat-list-item>
+        <mat-list-item>Ports</mat-list-item>
+        <mat-list-item>Weather</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
 	<div class="ship-list-grid">
     @for(ship of ships; track ship){
 	<mat-card class="ship-card" tabindex="0" role="button" (click)="onShipClick(ship)">
@@ -33,5 +41,7 @@
 	</mat-card>
     }
 	
-</div>
+	</div>
+	</mat-sidenav-container>
+	
 </div>

@@ -27,7 +27,7 @@ import "@oicl/openbridge-webcomponents/dist/components/top-bar/top-bar.js";
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    DashboardComponent
+    DashboardComponent,
   ],
   templateUrl: './cospy-home.component.html',
   styleUrl: './cospy-home.component.css',
@@ -38,8 +38,6 @@ export class CospyHomeComponent {
   countries = ['Norway', 'Denmark', 'Sweden'];
   ports = ['Alisund', 'Oslo', 'Bergen'];
   weather = ['Calm', 'Windy', 'Stormy'];
-
-
   showDashboard = false;
 
   constructor(private fb: FormBuilder) {

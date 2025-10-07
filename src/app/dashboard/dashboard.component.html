@@ -18,15 +18,15 @@
 </mat-toolbar>
 
 <div class="content">
-        <mat-sidenav-container class="sidenav-container">
-    <!-- <mat-sidenav mode="side" opened class="left-sidenav">
+    <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="left-sidenav">
       <mat-nav-list>
         <mat-list-item>Dashboard</mat-list-item>
         <mat-list-item>Ships</mat-list-item>
         <mat-list-item>Ports</mat-list-item>
         <mat-list-item>Weather</mat-list-item>
       </mat-nav-list>
-    </mat-sidenav> -->
+    </mat-sidenav>
 
     <mat-sidenav-content>
       <mat-card class="dashboard-card">
@@ -81,7 +81,7 @@
         <mat-card class="dashboard-bottom-card">
           <div class="bottom-title">Launch report</div>
           <div class="bottom-desc">Note: The report will be generated for the port:</div>
-          <button mat-raised-button color="primary">Generate report</button>
+          <button mat-raised-button class="my-custom-btn">Generate report</button>
         </mat-card>
 
         <mat-card class="dashboard-bottom-card weather-card">
@@ -107,7 +107,7 @@
 </div>
  }
  @else {
-    <app-ship
-    (backClicked)="backClickedEventHandler()"></app-ship>
+    <app-ships
+    (backClicked)="backClickedEventHandler()"></app-ships>
  }
 

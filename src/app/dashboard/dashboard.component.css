@@ -384,3 +384,8 @@
   flex: 1;
   padding: 16px;
 }
+
+.my-custom-btn {
+  background-color: #718097 !important;
+  color: #fff !important;
+}

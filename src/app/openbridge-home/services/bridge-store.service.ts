@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 export type Palette = 'day' | 'night' | 'dusk' | 'bright';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class BridgeStoreService {
   public palette :Palette ="day";
 

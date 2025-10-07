@@ -2,7 +2,7 @@
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
-	margin: 24px;
+	margin: 28px;
 }
 .ship-card {
 	padding: 0;
@@ -78,4 +78,19 @@
 .hamburger {
   background: rgba(255, 255, 255, 0.12);
   border-radius: 8px;
+}
+
+.sidenav-container {
+  height: 100%;
+}
+.left-sidenav {
+  width: 180px;
+  background: #fff;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  margin-left: 20px;
+  margin-top: 24px;
+}
+mat-sidenav {
+  background-color: #ffffff !important; /* light grey background */
+  color: #000; /* optional: keeps text readable */
 }
