@@ -1,0 +1,37 @@
+ <mat-toolbar class="topbar" color="primary">
+  <div class="toolbar-row-flex">
+    <button mat-icon-button aria-label="Back" class="back-btn" (click)="onBackClick()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+	<span class="toolbar-spacer"></span>
+    <button mat-icon-button aria-label="menu" class="hamburger">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<div class="content">
+	
+	<div class="ship-list-grid">
+    @for(ship of ships; track ship){
+	<mat-card class="ship-card" tabindex="0" role="button" (click)="onShipClick(ship)">
+		<div class="ship-card-content">
+			<span class="ship-icon">
+				@switch (ship.type) {
+					@case ('cargo') { <obi-ship></obi-ship> }
+					@case ('fishing') { <obi-ship-fishing></obi-ship-fishing> }
+					@default { <obi-ship></obi-ship> }
+				}
+			</span>
+			<div class="ship-meta">
+				<div class="ship-name">{{ ship.name }}</div>
+				<div class="ship-status">{{ ship.status }}</div>
+				@if (ship.speed) {
+					<div class="ship-speed">{{ ship.speed }}</div>
+				}
+			</div>
+		</div>
+	</mat-card>
+    }
+	
+</div>
+</div>

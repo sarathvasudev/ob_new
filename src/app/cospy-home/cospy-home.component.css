@@ -1,0 +1,94 @@
+/* Toolbar Title Alignment */
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-left: 30px; /* aligns with mat-sidenav content */
+}
+:host {
+  display: block;
+  height: 100vh;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Top Toolbar */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  padding: 0 12px;
+}
+.hamburger {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+.top-menu {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+
+.content {
+  padding-top: 56px;
+  height: calc(100vh - 56px);
+}
+
+.sidenav-container {
+  height: 100%;
+}
+
+/* Left Nav */
+.left-sidenav {
+  width: 180px;
+  background: #f7f8fa;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+  margin-left: 20px;
+  margin-top: 24px;
+}
+
+/* Form Card */
+.form-card {
+  margin: 24px 32px 16px 32px;
+  padding: 20px;
+  max-width: 640px;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+.weather-field {
+  max-width: 300px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+mat-sidenav {
+  background-color: #ffffff !important; /* light grey background */
+  color: #000; /* optional: keeps text readable */
+}
+
+mat-card {
+  background-color: #ffffff;
+}

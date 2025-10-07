@@ -22,4 +22,10 @@ import "@oicl/openbridge-webcomponents/dist/icons/icon-light-rain.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-speed.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-ship.js";
 import "@oicl/openbridge-webcomponents/dist/icons/icon-caution-color-iec.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-anchor-iec.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-ship-fishing.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-ship-highspeed.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-warning-acknowledged-iec.js";
+import "@oicl/openbridge-webcomponents/dist/icons/icon-cloudy.js";
+
 

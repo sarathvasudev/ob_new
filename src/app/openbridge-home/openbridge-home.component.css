@@ -45,16 +45,3 @@ main {
     top: 44px;
   }
 }
-
-.dropdown-row {
-  display: flex;
-  align-items: center;
-  gap: 24px; /* space between dropdowns */
-  margin: 16px 32px; /* margin on left and right */
-}
-
-.dropdown-row select {
-  min-width: 220px; /* slightly larger width */
-  padding: 6px 12px;
-  font-size: 1rem;
-}

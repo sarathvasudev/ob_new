@@ -1,0 +1,113 @@
+ @if (!showShips){
+    <mat-toolbar class="topbar" color="primary">
+  <div class="toolbar-row-flex">
+    <button mat-icon-button aria-label="Back" class="back-btn" (click)="onBackClick()">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span class="title">RUNNING LIVE</span>
+    <span class="toolbar-spacer"></span>
+    <div class="toolbar-info-row">
+      <input class="toolbar-info-box" [value]="country" readonly tabindex="-1" />
+      <input class="toolbar-info-box" [value]="port" readonly tabindex="-1" />
+      <input class="toolbar-info-box" [value]="weather" readonly tabindex="-1" />
+    </div>
+    <button mat-icon-button aria-label="menu" class="hamburger">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+
+<div class="content">
+        <mat-sidenav-container class="sidenav-container">
+    <!-- <mat-sidenav mode="side" opened class="left-sidenav">
+      <mat-nav-list>
+        <mat-list-item>Dashboard</mat-list-item>
+        <mat-list-item>Ships</mat-list-item>
+        <mat-list-item>Ports</mat-list-item>
+        <mat-list-item>Weather</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav> -->
+
+    <mat-sidenav-content>
+      <mat-card class="dashboard-card">
+        <div class="dashboard-stats-grid">
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('shipsRunning')">
+            <obi-ship-highspeed></obi-ship-highspeed>
+            <div class="stat-value">{{ shipsRunning }}</div>
+            <div class="stat-label">Ships (running)</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('anchoredShips')">
+            <obi-anchor-iec></obi-anchor-iec>
+            <div class="stat-value">{{ anchoredShips }}</div>
+            <div class="stat-label">Anchored ships</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('expectedArrivals')">
+            <mat-icon>flag</mat-icon>
+            <div class="stat-value">{{ expectedArrivals }}</div>
+            <div class="stat-label">Expected arrivals</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('draftWarnings')">
+            <obi-warning-acknowledged-iec usecsscolor></obi-warning-acknowledged-iec>
+            <div class="stat-value">{{ draftWarnings }}</div>
+            <div class="stat-label">Draft warnings</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('shipsTotal')">
+            <obi-ship></obi-ship>
+            <div class="stat-value">{{ shipsTotal }}</div>
+            <div class="stat-label">Ships</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('fishingVessels')">
+            <obi-ship-fishing></obi-ship-fishing>
+            <div class="stat-value">{{ fishingVessels }}</div>
+            <div class="stat-label">Fishing vessels</div>
+          </div>
+          <div class="dashboard-stat" tabindex="0" role="button"
+            (click)="onStatClick('departures')">
+            <mat-icon>arrow_upward</mat-icon>
+            <div class="stat-value">{{ departures }}</div>
+            <div class="stat-label">Departures</div>
+          </div>
+          <div></div>
+        </div>
+      </mat-card>
+
+      <div class="dashboard-bottom-section">
+        <mat-card class="dashboard-bottom-card">
+          <div class="bottom-title">Launch report</div>
+          <div class="bottom-desc">Note: The report will be generated for the port:</div>
+          <button mat-raised-button color="primary">Generate report</button>
+        </mat-card>
+
+        <mat-card class="dashboard-bottom-card weather-card">
+          <div class="weather-card-row">
+            <div class="weather-card-main">
+              <div class="bottom-title">Weather</div>
+              <div class="weather-temp">8°C</div>
+              <div class="weather-desc">Hurrycane</div>
+            </div>
+            <div class="weather-card-icon">
+              <obi-cloudy style="font-size:40px;"></obi-cloudy>
+            </div>
+          </div>
+          <div class="weather-card-details">
+            <span>{{ wind }}</span>
+            <span>{{ humidity }}</span>
+          </div>
+        </mat-card>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  
+</div>
+ }
+ @else {
+    <app-ship
+    (backClicked)="backClickedEventHandler()"></app-ship>
+ }
+

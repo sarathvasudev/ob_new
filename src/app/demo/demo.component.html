@@ -1,19 +1,4 @@
-<div class="ship-select-row">
-  <obc-button class="regular"
-          variant="raised"
-          (click)="onBack()">
-          &#8592; Back
-  </obc-button>
-  <select (change)="onShipChange($event)">
-    <option value="" disabled selected>Select Ship</option>
-    @for (ship of ships; track ship) {
-      <option [value]="ship.value">{{ ship.label }}</option>
-    }
-  </select>
-</div>
-<div class="obc-component-size-regular"><obc-notification-message-item></obc-notification-message-item></div>
-@if (showDashboard){
-  <div class="container">
+<div class="container">
   <!-- Left tab -->
   <div class="left box">
     <!-- Instrumentation -->
@@ -121,11 +106,3 @@
     </div>
   </div>
 </div>
-</div>
-}
-@if (!showDashboard && selectedShipId){
-  <div class="notification-banner box-banner">
-    <obi-caution-color-iec slot="icon" usecsscolor style="vertical-align: middle; margin-right: 24px; width: 32px; height: 32px;"></obi-caution-color-iec>
-    <span style="vertical-align: middle; font-size: 1.1rem;">Connecting to Fetch Ship Information..................</span>
-  </div>
-}

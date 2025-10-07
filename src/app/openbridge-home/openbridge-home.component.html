@@ -1,0 +1,27 @@
+<div class="root obc-component-size-regular">
+<obc-top-bar
+  appTitle="COS"
+  pageName="Dashboard"
+  showDimmingButton
+  showClock
+  [date] = "currentDateTime"
+  (dimming-button-clicked)="windowService.toggleBrilliance()">
+  <obi-placeholder slot="app-icon">fdf</obi-placeholder>
+  <obc-command-button slot="command-button"></obc-command-button>
+  <obc-topbar-message-item slot="alerts">Development Phase</obc-topbar-message-item>
+</obc-top-bar>
+<main >
+  <div class="content" style="display: flex; flex-direction: column;">
+    @if(windowService.showBackdrop()){
+      <div class="backdrop" (click)="windowService.hideAll()"></div>
+    }
+    @if(windowService.showBrilliance){
+      <obc-brilliance-menu class="brilliance"
+      [palette]="bridgeStoreService.palette"
+      (palette-changed)="onPaletteChange($event)">
+      </obc-brilliance-menu>
+    }
+    <app-demo [information]="information"></app-demo>
+  </div>
+</main>
+</div>

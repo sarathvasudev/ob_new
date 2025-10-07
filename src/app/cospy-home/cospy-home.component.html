@@ -1,0 +1,69 @@
+@if(!showDashboard){
+    <mat-toolbar class="topbar" color="primary">
+  <div class="toolbar-left">
+    <span class="title">Port Simulation</span>
+  </div>
+  <span class="spacer"></span>
+  <button mat-icon-button aria-label="menu" class="hamburger">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="content">
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav mode="side" opened class="left-sidenav">
+      <mat-nav-list>
+        <mat-list-item>Dashboard</mat-list-item>
+        <mat-list-item>Ships</mat-list-item>
+        <mat-list-item>Ports</mat-list-item>
+        <mat-list-item>Weather</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <mat-card class="form-card">
+        <form [formGroup]="form" (ngSubmit)="startSimulation()">
+          <div class="row">
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Country</mat-label>
+              <mat-select formControlName="country">
+                <mat-option *ngFor="let c of countries" [value]="c">{{ c }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="form-field">
+              <mat-label>Port</mat-label>
+              <mat-select formControlName="port">
+                <mat-option *ngFor="let p of ports" [value]="p">{{ p }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="row">
+            <mat-form-field appearance="outline" class="form-field weather-field">
+              <mat-label>Weather</mat-label>
+              <mat-select formControlName="weather">
+                <mat-option *ngFor="let w of weather" [value]="w">{{ w }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+
+          <div class="button-row">
+            <button mat-raised-button color="primary" type="submit">
+              Start Simulation
+            </button>
+          </div>
+        </form>
+      </mat-card>
+    </mat-sidenav-content>
+    
+  </mat-sidenav-container>
+</div>
+}
+@else {
+    <app-dashboard
+    (backClicked)="backClickedEventHandler()"
+    ></app-dashboard>
+}
+
+

@@ -1,7 +1,10 @@
 
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { CospyHomeComponent } from './cospy-home/cospy-home.component';
+import { OpenBridgeHomeComponent } from './openbridge-home/openbridge-home.component';
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: CospyHomeComponent },
+  { path: 'openbridge', component: OpenBridgeHomeComponent },
+  //{ path: '', component: HomeComponent },
 ];
