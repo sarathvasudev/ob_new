@@ -10,6 +10,7 @@ export class InformationModel {
   thrusterInfo?: ThrusterDataModel;
   compassInfo?: CompassDataModel;
   weatherInfo?: WeatherDataModel;
+  location?: locationModel;
 }
 
 export class ThrusterDataModel {
@@ -50,5 +51,10 @@ export class WeatherDataModel {
   temperature?: number;
   airPressure?: number
   humidity?: number;
+}
+
+export class locationModel {
+  latitude?: string;
+  longitude?: string;
 }
 
