@@ -6,9 +6,9 @@ export type Palette = 'day' | 'night' | 'dusk' | 'bright';
 export class BridgeStoreService {
   public palette :Palette ="day";
 
-  setPalette(p: Palette) {
-    this.palette = p;
-    document.documentElement.setAttribute('data-obc-theme', p);
+  setPalette(palette: Palette) {
+    this.palette = palette;
+    document.documentElement.setAttribute('data-obc-theme', this.palette);
   }
 
   clearData(){
